@@ -1,0 +1,21 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+#page-layout {
+  position: relative;
+  width: 100vw;
+  background-color: beige;
+  padding-top: 40px;
+}
+
+#copyright-group {
+  position: relative;
+  width: 100vw;
+  background-color: gold;
+}
