@@ -18,7 +18,7 @@ export function getAllSupportedCurrencies(onSuccessfulCallback = null) {
   fetch(baseURL + currencyListURL)
     .then((response) => response.json())
     .then((result) => {
-      loadedCurrencyAbbrList = Object.keys(result);
+      loadedCurrencyAbbrList = Object.keys(result).map((abbr) => abbr.toUpperCase());
       loadedCurrencyNameList = Object.values(result);
       
       for (let i = 0; i < loadedCurrencyAbbrList.length; ++i) {
@@ -76,7 +76,7 @@ export function getExchangeRate(sourceAbbr, destAbbr, onSuccessfulCallback = nul
   // Grab Result from Live Server
   if (!useCache) {
     cacheDate = new Date();
-    const url = baseURL + currencySubURL + "/" + sourceAbbr + "/" + destAbbr + ".json";
+    const url = baseURL + currencySubURL + "/" + sourceAbbr.toLowerCase() + "/" + destAbbr.toLowerCase() + ".json";
 
     // Debug
     //console.log("[Live Exchange between ${sourceAbbr} and ${destAbbr}] Exchange Rate URL: " + url);
