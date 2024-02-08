@@ -181,10 +181,10 @@ function filterTableRow(isSource) {
       
       switch (destinationFilterQuery.toLowerCase()) {
         case "name":
-          row.style.display = currenciesData[iter].name.includes(inputValue) ? "" : "none";
+          row.style.display = currenciesData[iter].name.toLowerCase().includes(inputValue) ? "" : "none";
           break;
         case "abbr":
-          row.style.display = currenciesData[iter].abbr.includes(inputValue) ? "" : "none";
+          row.style.display = currenciesData[iter].abbr.toLowerCase().includes(inputValue) ? "" : "none";
           break;
         case "none":
           row.style.display = "";
