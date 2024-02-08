@@ -77,9 +77,6 @@ export function getExchangeRate(sourceAbbr, destAbbr, onSuccessfulCallback = nul
   if (!useCache) {
     cacheDate = new Date();
     const url = baseURL + currencySubURL + "/" + sourceAbbr.toLowerCase() + "/" + destAbbr.toLowerCase() + ".json";
-
-    // Debug
-    //console.log("[Live Exchange between ${sourceAbbr} and ${destAbbr}] Exchange Rate URL: " + url);
     
     fetch(url)
       .then((response) => {
@@ -91,7 +88,7 @@ export function getExchangeRate(sourceAbbr, destAbbr, onSuccessfulCallback = nul
       .then((result) => {
         // Debug
         //console.log(`[Live Exchange between ${sourceAbbr} and ${destAbbr}] Result.`, result);
-        const rate = result[destAbbr];
+        const rate = result[destAbbr.toLowerCase()];
         
         const newObj = {
           source: sourceAbbr,
