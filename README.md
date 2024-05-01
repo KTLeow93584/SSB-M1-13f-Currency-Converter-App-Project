@@ -28,7 +28,7 @@
 <!--- Discussion: https://stackoverflow.com/questions/41915571/open-link-in-new-tab-with-github-markdown-using-target-blank --->
 
 ## Misc
-- Currency Converter API Source: https://github.com/fawazahmed0/currency-api
+- Currency Converter API Source: [Post-Migration URL](https://github.com/fawazahmed0/exchange-api) / [Pre-Migration URL](https://github.com/fawazahmed0/currency-api)
 
 ## License
 MIT © [Leow Kean Tat/Project Kazcade](https://github.com/KTLeow93584)
