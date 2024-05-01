@@ -160,11 +160,11 @@ function filterTableRow(isSource) {
       }
       
       switch (sourceFilterQuery.toLowerCase()) {
-        case "name":
-          row.style.display = currenciesData[iter].name.toLowerCase().includes(inputValue) ? "" : "none";
+        case "name":          
+          row.style.display = currenciesData[iter].name.toLowerCase().includes(inputValue.toLowerCase()) ? "" : "none";
           break;
         case "abbr":
-          row.style.display = currenciesData[iter].abbr.toLowerCase().includes(inputValue) ? "" : "none";
+          row.style.display = currenciesData[iter].abbr.toLowerCase().includes(inputValue.toLowerCase()) ? "" : "none";
           break;
         case "none":
           row.style.display = "";
@@ -208,7 +208,7 @@ function acquireExchangeRate() {
   exchangeMarkerElement.innerHTML = `Loading Exchange Rates...`;
   getExchangeRate(sourceCurrencyAbbr, destinationCurrencyAbbr, (rate) => {
     // Debug
-    //console.log(`[Exchange Rate between ${sourceCurrencyAbbr} and ${destinationCurrencyAbbr}] Result.`, result);
+    //console.log(`[Exchange Rate between ${sourceCurrencyAbbr} and ${destinationCurrencyAbbr}] Result.`, rate);
 
     exchangeMarkerElement.innerHTML = `Exchange Rate between 
     <span class="text-info">[${sourceCurrencyName} (${sourceCurrencyAbbr})]</span> and 
